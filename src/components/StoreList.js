@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import Store from './Store';
+import Store from './Store';
 
 class StoreList extends React.Component {
   state = {
@@ -20,7 +20,10 @@ class StoreList extends React.Component {
     if (stores === null) {
       return <p>Loading stores...</p>;
     }
-    return <store />;
+    const storeInfo = stores.map((storeData) => {
+      return <Store storeData={storeData} />;
+    });
+    return <div>{storeInfo}</div>;
   }
 }
 export default StoreList;
