@@ -16,6 +16,10 @@ class StoreList extends React.Component {
     });
   }
   render() {
+    const stores = this.state.stores;
+    if (stores === null) {
+      return <p>Loading stores...</p>;
+    }
     return <store />;
   }
 }
