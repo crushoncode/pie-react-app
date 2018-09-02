@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
-class Store extends React.Component {
+class Store extends Component {
   state = {
     pieOfTheDay: null
   };
-
   componentDidMount() {
     axios
       .get(`https://pie.now.sh/stores/${this.props.storeData.id}/pies`)
@@ -13,16 +12,17 @@ class Store extends React.Component {
         const [pieOfTheDay] = json.data.filter((pie) => {
           return pie.isPieOfTheDay ? true : false;
         });
-        console.log(pieOfTheDay);
-
         this.setState({
           pieOfTheDay: pieOfTheDay
         });
       });
   }
+
   render() {
     const { displayName, address, mobile, rating } = this.props.storeData;
     const pieOfTheDay = this.state.pieOfTheDay;
+    console.log(pieOfTheDay);
+
     return (
       <React.Fragment>
         <p>{displayName}</p>
@@ -42,5 +42,4 @@ class Store extends React.Component {
     );
   }
 }
-
 export default Store;
