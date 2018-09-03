@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
 import Store from './Store';
+import Pagination from './Pagination';
 
 class StoreList extends Component {
   state = {
@@ -11,20 +12,13 @@ class StoreList extends Component {
     }
   };
 
-  handlePageOne = () => {
-    this.setState({
+  changePage = (page) => {
+    this.setState((prevState) => ({
       pagination: {
-        currentPage: 1
+        currentPage: page,
+        storeLimit: prevState.pagination.storeLimit
       }
-    });
-  };
-
-  handlePageTwo = () => {
-    this.setState({
-      pagination: {
-        currentPage: 2
-      }
-    });
+    }));
   };
 
   componentDidMount() {
@@ -39,24 +33,32 @@ class StoreList extends Component {
   render() {
     const { stores, pagination } = this.state;
 
+    // 'Loading' if no stores
     if (stores === null) {
       return <p>Loading stores...</p>;
     }
 
-    const start =
-      pagination.currentPage === 1 ? 0 : (pagination.currentPage - 1) * 5;
-    const end = pagination.currentPage * 5;
-    const visibleStores = stores.slice(start, end);
+    // Pagination calculator
+    const endIndex = pagination.currentPage * pagination.storeLimit;
+    const startIndex = endIndex - pagination.storeLimit + 1;
 
-    const storeInfo = visibleStores.map((storeData) => {
-      return <Store storeData={storeData} />;
+    // Filter the stores - get stores between startIndex and endIndex
+    const filteredStores = stores.filter((store) => {
+      return store.id >= startIndex && store.id <= endIndex;
+    });
+    // Render the filtered stores
+    const storeInfo = filteredStores.map((storeData) => {
+      return <Store key={storeData.id} storeData={storeData} />;
     });
 
     return (
       <Fragment>
-        <div>{storeInfo}</div>
-        <button onClick={() => this.handlePageOne()}>page 1</button>
-        <button onClick={() => this.handlePageTwo()}>page 2</button>
+        {storeInfo}
+        <Pagination
+          pagination={pagination}
+          storeLength={stores.length}
+          changePage={this.changePage}
+        />
       </Fragment>
     );
   }
