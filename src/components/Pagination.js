@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const Pagination = ({ pagination, storeLength, changePage }) => {
   const totalPages = Math.ceil(storeLength / pagination.storeLimit);
@@ -12,20 +12,19 @@ const Pagination = ({ pagination, storeLength, changePage }) => {
   });
 
   return (
-    <Fragment>
-      <div className="prevPage">
+    <div className="pageContainer">
+      <div>
         <button onClick={() => changePage(pagination.currentPage - 1)}>
-          left
+          {'<'}
         </button>
       </div>
-      <div className="currentPages">{pageButtons}</div>
-
-      <div className="nextPage">
+      <div>{pageButtons}</div>
+      <div>
         <button onClick={() => changePage(pagination.currentPage + 1)}>
-          right
+          {'>'}
         </button>
       </div>
-    </Fragment>
+    </div>
   );
 };
 export default Pagination;
