@@ -12,6 +12,10 @@ class StoreList extends Component {
     }
   };
 
+  handleLike = (pieOfTheDay) => {
+    this.props.handleLike(pieOfTheDay);
+  };
+
   changePage = (page) => {
     this.setState((prevState) => ({
       pagination: {
@@ -46,13 +50,25 @@ class StoreList extends Component {
     const filteredStores = stores.filter((store) => {
       return store.id >= startIndex && store.id <= endIndex;
     });
+
     // Render the filtered stores
     const storeInfo = filteredStores.map((storeData) => {
-      return <Store key={storeData.id} storeData={storeData} />;
+      return (
+        <div className="storeContainer">
+          <Store
+            key={storeData.id}
+            storeData={storeData}
+            handleLike={this.handleLike}
+          />
+        </div>
+      );
     });
 
     return (
       <Fragment>
+        <p className="title">
+          <h1>Pie of the Day</h1>
+        </p>
         {storeInfo}
         <Pagination
           pagination={pagination}
