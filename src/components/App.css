@@ -13,6 +13,12 @@ html {
   color: #6f6158;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  color: #6f6158;
+}
+
 .storeContainer {
   display: inline-block;
   position: center;

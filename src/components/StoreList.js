@@ -39,7 +39,7 @@ class StoreList extends Component {
 
     // 'Loading' if no stores
     if (stores === null) {
-      return <p>Loading stores...</p>;
+      return <h2 className="loading">Loading stores...</h2>;
     }
 
     // Pagination calculator
