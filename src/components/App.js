@@ -19,7 +19,6 @@ class App extends Component {
     }, 0);
 
     if (alreadyLikedCount > 0) {
-      console.log('already liked');
       return;
     }
 
@@ -29,12 +28,11 @@ class App extends Component {
       return {
         savedlist: list
       };
-    }, console.log(this.state.savedlist));
+    });
   };
 
   render() {
     const { savedlist } = this.state;
-    console.log('app', savedlist);
     return (
       <React.Fragment>
         <Navbar />

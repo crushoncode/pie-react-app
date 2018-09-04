@@ -38,7 +38,7 @@ class Store extends Component {
     );
 
     return (
-      <Fragment>
+      <div className="storeContainer">
         {pieOfTheDay ? (
           <Fragment>
             <h1 className="pieName">
@@ -64,7 +64,7 @@ class Store extends Component {
         <h3>{address}</h3>
         <h3>{mobile}</h3>
         <h3>{likeButton}</h3>
-      </Fragment>
+      </div>
     );
   }
 }

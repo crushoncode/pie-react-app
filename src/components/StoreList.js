@@ -30,7 +30,6 @@ class StoreList extends Component {
       this.setState({
         stores: res.data
       });
-      console.log(this.state.stores);
     });
   }
 
@@ -54,21 +53,19 @@ class StoreList extends Component {
     // Render the filtered stores
     const storeInfo = filteredStores.map((storeData) => {
       return (
-        <div className="storeContainer">
-          <Store
-            key={storeData.id}
-            storeData={storeData}
-            handleLike={this.handleLike}
-          />
-        </div>
+        <Store
+          key={storeData.id}
+          storeData={storeData}
+          handleLike={this.handleLike}
+        />
       );
     });
 
     return (
       <Fragment>
-        <p className="title">
+        <div className="title">
           <h1>Pie of the Day</h1>
-        </p>
+        </div>
         {storeInfo}
         <Pagination
           pagination={pagination}

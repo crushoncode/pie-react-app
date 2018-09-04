@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Favourite extends Component {
   render() {
-    console.log('savedlist', this.props.savedlist);
     if (!this.props.savedlist) return 'no saved items';
 
     const { savedlist } = this.props;
@@ -18,7 +17,6 @@ class Favourite extends Component {
             {' for '}
             {item.quantity}
           </h3>
-
           <h3>I love this deal!</h3>
         </div>
       );
