@@ -1,10 +1,12 @@
 # PIE OF THE DAY
 
+## Hosted at https://pieoftheday.now.sh/
+
 # CONTENTS
 
 - [Problem](#Problem)
 - [Architecture](#Architecture)
-- [Deployment](#Deployment)
+- [Final Product](#Final_Product)
 
 ## **PROBLEM**
 
@@ -42,4 +44,6 @@ However, since the price of 'Pie of the day' at each shop changes each day, Jake
 - It computes total pages and get array of pages.
 - It displays buttons for pagination.
 
-## **DEPLOYMENT**
+## **Final Product**
+
+![pie](src/image/potd.png)
