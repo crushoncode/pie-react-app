@@ -1,0 +1,114 @@
+html {
+  background: #f3eee9;
+  width: 100%;
+  height: 100%;
+  font-family: 'NTR', sans-serif;
+}
+
+/* Storelist */
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: #6f6158;
+}
+
+.storeContainer {
+  display: inline-block;
+  position: center;
+  line-height: 20px;
+  flex-wrap: wrap;
+  border: 2px solid #6f6158;
+  width: 205px;
+  height: 300px;
+  padding-top: 30px;
+  margin-top: 30px;
+  margin-left: 85px;
+  text-align: center;
+  border-radius: 10px;
+  color: #6f6158;
+}
+
+/* Favourite */
+
+.savedItems {
+  display: inline-block;
+  position: center;
+  line-height: 20px;
+  flex-wrap: wrap;
+  border: 2px solid #6f6158;
+  width: 200px;
+  height: 150px;
+  padding-top: 20px;
+  margin-top: 30px;
+  margin-left: 85px;
+  text-align: center;
+  border-radius: 10px;
+  color: #6f6158;
+}
+
+/* Store */
+
+.pieName {
+  color: #f78e17;
+}
+
+.soldOut {
+  color: #d63007;
+}
+
+/* Navbar */
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  height: 40px;
+  list-style-type: none;
+  color: #6f6158;
+}
+
+li {
+  align-self: center;
+}
+
+li a {
+  margin: 4px 30px 4px 0px;
+  font-size: 18px;
+  color: #6f6158;
+  text-decoration: none;
+}
+
+li a:hover {
+  border-bottom: 2px solid #6f6158;
+  padding-bottom: 3px;
+}
+
+/* Store & Pagination */
+
+button {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 2;
+  width: 60px;
+  height: 34px;
+  color: #f3eee9;
+  background-color: #6f6158;
+  border-radius: 15px;
+}
+
+button:focus {
+  outline: 0.5px solid #f3eee9;
+  outline-offset: -3px;
+}
+
+/* Pagination */
+
+.pageContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pageContainer > div {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
