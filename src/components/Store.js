@@ -41,29 +41,29 @@ class Store extends Component {
       <Fragment>
         {pieOfTheDay ? (
           <Fragment>
-            <h3 className="pieName">
+            <h1 className="pieName">
               <b>{pieOfTheDay.displayName}</b>
-            </h3>
-            <p>
+            </h1>
+            <h3>
               {pieOfTheDay.priceString} {'for'} {pieOfTheDay.quantity}
-            </p>
+            </h3>
           </Fragment>
         ) : (
           <Fragment>
-            <h3 className="soldOut">
+            <h1 className="soldOut">
               <b>Sold Out</b>
-            </h3>
+            </h1>
           </Fragment>
         )}
-        <p>{displayName}</p>
-        <p>
+        <h3>{displayName}</h3>
+        <h3>
           {'Quality: '}
           {rating}
           {'/10'}
-        </p>
-        <p>{address}</p>
-        <p>{mobile}</p>
-        <p>{likeButton}</p>
+        </h3>
+        <h3>{address}</h3>
+        <h3>{mobile}</h3>
+        <h3>{likeButton}</h3>
       </Fragment>
     );
   }
