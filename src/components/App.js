@@ -10,6 +10,8 @@ class App extends Component {
     savedlist: []
   };
 
+  // some
+
   handleLike = (pieOfTheDay) => {
     const alreadyLikedCount = this.state.savedlist.reduce((accum, pie) => {
       if (pie.id === pieOfTheDay.id) {
