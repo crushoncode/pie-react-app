@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
@@ -8,16 +8,14 @@ class Navbar extends Component {
 
   navbarLinks = () => {
     return (
-      <Fragment>
-        <ul>
-          <li>
-            <Link to="/"> Home </Link>
-          </li>
-          <li>
-            <Link to="/Favourite"> My Favourite </Link>
-          </li>
-        </ul>
-      </Fragment>
+      <ul>
+        <li>
+          <Link to="/"> Home </Link>
+        </li>
+        <li>
+          <Link to="/Favourite"> My Favourite </Link>
+        </li>
+      </ul>
     );
   };
   render() {
