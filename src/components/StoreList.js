@@ -26,15 +26,26 @@ class StoreList extends Component {
   };
 
   componentDidMount() {
-    axios.get('https://pie.now.sh/stores').then((res) => {
-      this.setState({
-        stores: res.data
+    axios
+      .get('https://pie.now.sh/stores')
+      .then((res) => {
+        this.setState({
+          stores: res.data
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          errStores: err.data
+        });
       });
-    });
   }
 
   render() {
-    const { stores, pagination } = this.state;
+    const { stores, pagination, errStores } = this.state;
+
+    if (errStores) {
+      return <h3>nothing to show</h3>;
+    }
 
     // 'Loading' if no stores
     if (stores === null) {
